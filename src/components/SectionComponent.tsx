@@ -15,7 +15,6 @@ const Container = styled.div<{ backgroundColor?: string }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   background-color: ${({ backgroundColor }) => backgroundColor};
   font-size: 16px;
   font-weight: 600;
