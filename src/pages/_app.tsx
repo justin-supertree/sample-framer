@@ -9,6 +9,8 @@ import {
   QueryClientProvider,
 } from "@tanstack/react-query";
 
+import Transition from "@/components/Transition";
+
 type AppProviderProps = AppProps & {
   Component: NextPageWithLayout;
 };
@@ -23,7 +25,7 @@ const App = ({ Component, pageProps }: AppProviderProps) => {
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={dehydratedState}>
-        {getLayout(<Component {...pageProps} />)}
+        <Transition>{getLayout(<Component {...pageProps} />)}</Transition>
       </Hydrate>
     </QueryClientProvider>
   );
